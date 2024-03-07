@@ -74,5 +74,10 @@ public class EntityB {
 
 ```
 
-> 所以只是BeanCopier在对象存在链式setter这种情况下不适用,所以还是用BeanUtils.copyProperties比较简单透明,没这么多的黑魔法...
+> 所以只是BeanCopier在对象存在链式setter这种情况下不适用,所以还是用spring的BeanUtils.copyProperties比较简单透明,没这么多的黑魔法...
 
+------------------------------------------------
+
+**2024年3月7日补充**
+>今天发现apache-commons包的BeanUtils.copyProperties也无法复制字段的setter函数有返回值的对象, 另外本身apache-commons的复制方法性能也不如spring的,在此建议统一使用spring包的BeanUtils.copyProperties
+> 
